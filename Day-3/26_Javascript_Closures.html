@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!--https://www.w3schools.com/js/js_function_closures.asp 
+A closure is a function having access to the parent scope, even after the parent function has closed.
+-->
+<h2>JavaScript Closures</h2>
+
+<p>Counting with a local variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">0</p>
+
+<script>
+var add = (function () {
+    var counter = 0;
+    return function () {counter += 1; return counter;}
+})();
+
+function myFunction(){
+    document.getElementById("demo").innerHTML = add();
+}
+</script>
+
+</body>
+</html>

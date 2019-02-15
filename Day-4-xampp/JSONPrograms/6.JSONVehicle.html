@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple JSON example</title>
+  </head>
+
+  <body>
+
+  <header>
+
+  </header>
+
+  <section>
+
+  </section>
+
+    
+    <script>
+    var vehicles = [
+    {
+      "name" : "Maruti",
+      "model" : "Maruti Swift",
+      "year" : 2018,
+      "price" : 650000
+    },
+    {
+      "name" : "Hyundai",
+      "model" : "Grand i10 Aastha",
+      "year" : 2018,
+      "price" : 630000
+    },  
+    {
+      "name" : "Ford",
+      "model" : "Ford Icon",
+      "year" : 2018,
+      "price" : 600000
+    }
+
+    ];
+    
+    var header = document.querySelector('header');
+    var section = document.querySelector('section');
+
+    populateHeader(vehicles); 
+    pupulateSection(vehicles);
+
+    function populateHeader(vehicles) 
+    {
+      for (var i=0;i<vehicles.length; i++)
+      {
+        var myH1 = document.createElement('h1');
+      myH1.textContent = vehicles[i].name;
+      header.appendChild(myH1);
+
+        console.log(vehicles[i].name);
+      }
+    }
+
+    function pupulateSection(vehicles) 
+    {
+      for (var i=0;i<vehicles.length; i++)
+      {
+        var list = document.createElement('ul');
+        var listitem1 = document.createElement('li');
+        
+        
+        var listitem2 = document.createElement('li');
+        var listitem3 = document.createElement('li');
+        
+        
+        listitem1.textContent = vehicles[i].model;
+        listitem2.textContent = vehicles[i].year;
+
+      listitem3.textContent = vehicles[i].price;
+
+
+      list.appendChild(listitem1);
+      list.appendChild(listitem2);
+      list.appendChild(listitem3);
+      section.appendChild(list);
+
+        console.log(vehicles[i].model);
+      }
+    }
+    </script>
+
+
+  </body>
+</html>

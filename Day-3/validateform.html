@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var name = document.forms["myForm"]["fname"].value;
+    var mobile = document.forms["myForm"]["mobile"].value;
+
+    if (name == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+	// If mobile number is Not a Number or less than one or greater than 10
+	else if (isNaN(mobile) || mobile < 1 || mobile > 10)
+	{
+   
+        alert("Mobile Number is mandatory. It should be of 10 digits");
+        return false;
+    }  else if (email == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+
+}
+</script>
+</head>
+<body>
+<h1>Registration Form</h1>
+<form name="myForm" action="action-page.html"
+onsubmit="return validateForm()" method="post"  style="margin: 10px;" >
+Name: <input type="text" name="fname"><br>
+Mobile: <input type="text" name="mobile"><br>
+Email: <input type="text" name="email"><br>
+
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

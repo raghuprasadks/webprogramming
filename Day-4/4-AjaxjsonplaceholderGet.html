@@ -1,0 +1,106 @@
+<html>  
+<head>  
+<meta content="text/html; charset=utf-8">  
+<title>AJAX JSON by Javatpoint</title>  
+<script type="application/javascript">  
+
+function load()  
+{  
+   
+   var url = "https://jsonplaceholder.typicode.com/posts";//use any url that have json data  
+   var request;  
+  
+   if(window.XMLHttpRequest){    
+    request=new XMLHttpRequest();//for Chrome, mozilla etc  
+   }    
+   else if(window.ActiveXObject){    
+    request=new ActiveXObject("Microsoft.XMLHTTP");//for IE only  
+   }    
+   request.onreadystatechange  = function(){  
+      if (request.readyState == 4  )  
+      {  
+        var jsonObj = JSON.parse(request.responseText);//JSON.parse() returns JSON object  
+     	console.log("json object " +jsonObj[0]);
+
+     	for (x in jsonObj) {
+			console.log("json object key " +x + " User id " +jsonObj[x].userId + "title " +jsonObj[x].title);
+        document.getElementById("datadisplay").innerHTML =  jsonObj[x].title;	
+    	
+      }
+
+/**
+      var ul = "<ul>";
+for(var i=0; i < arr.length; i++) {
+    ul += "<li><a href=\"#\">" + arr[i] + "</a></li>";
+}
+ul += "</ul>";
+**/
+	  
+      }  
+   }  
+   request.open("GET", url, true);  
+   request.send();  
+}  
+</script>  
+<style type="text/css">
+  ul,li {
+    display: inline-block;
+
+  }
+  div {
+    border: 2px solid tomato
+  }
+  table,tr,th,td {
+    border: 1px solid tomato;
+    width: 100%;
+    
+  }
+</style>
+</head>  
+<body>  
+
+<div>
+  
+  <table style="align-content:center; ">
+    <thead>
+    <tr>
+    <th> User Id</th>
+    <th>Id </th>
+    <th>Title </th>
+    <th>Body</th>
+    </tr>
+    
+    </thead>
+    <tbody>
+    <tr>
+    <td> 1</td>
+    <td>1 </td>
+    <td>mY POST </td>
+    <td>pOST Body</td>
+    </tr>
+    
+    </tbody>
+    
+
+  </table>
+<!--
+  <div id="datadisplay">
+  <ul>
+    <li>1</li>
+    <li>My Post 1</li>
+    <li>My Post Details 1</li>
+  </ul>
+  <ul>
+    <li>2</li>
+    <li>My Post 2</li>
+    <li>My Post Details 2</li>
+  </ul>
+  
+  </div>
+-->
+  
+ 
+  
+<!--<button type="button" onclick="load()">Load Information</button> --> 
+</body>  
+</html>  

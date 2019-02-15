@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    
+  </head>
+  <body onload="createMyList()">
+    <h1>www.kaushalya.tech</h1>
+    <div id="friends">
+      
+    </div>
+    <p>
+      <a href="https://www.kaushalya.tech">www.kaushalya.tech</a>
+    </p>
+
+    <script type="text/javascript">
+ console.log('create list');
+// define the array
+var myFriendsList = [];
+ 
+// assign values to array
+myFriendsList = ["Ravi","Rakesh","Riyaz","Amit","Amarjeet","Anthony"];
+ 
+// get the container
+var container = document.getElementById("friends");
+ 
+// define the function 
+function createMyList(){
+  
+  // calculate the length of array
+  var listLength = myFriendsList.length;
+  
+  
+  if(listLength>0){
+    
+    // Create the Unordered list if there are elements present in the array  
+    var myList = document.createElement("ul");
+    
+    // add a class name to list
+    myList.className="list";
+    
+    // iterate through the array 
+    for(var i=0;i<listLength;i++){
+      
+      // create list item for every element 
+      var listItem = document.createElement("li");
+      
+      // create a text node to store value
+      var listValue = document.createTextNode(myFriendsList[i]);
+      
+      // append the value in the list item
+      listItem.appendChild(listValue); 
+      
+      // append the list item in the list
+      myList.appendChild(listItem);
+    }
+    
+    // append the list in the container
+    container.appendChild(myList);
+    
+  }else{
+    
+    // Create a text node with the message
+    var message = document.createTextNode("No Friends");
+    
+    // Append the message to the container
+    container.appendChild(message);    
+  }
+ 
+}
+ 
+/**window.onload = createMyList;**/
+</script>
+  </body>
+</html>

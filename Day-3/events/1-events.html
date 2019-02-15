@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+</head>
+<body onload="loadEvent()">
+
+<h1>Mouse Events</h1>
+<label>Name</label><input type="text" name="name" onkeydown="keyDown()" onkeyup="keyUp()">
+
+<p>Select a new car from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+  <option value="Audi">Audi
+  <option value="BMW">BMW
+  <option value="Mercedes">Mercedes
+  <option value="Volvo">Volvo
+</select>
+
+<p id="demo"></p>
+
+<button onmouseout="mouseOut()" onmouseover="mouseOver()" onclick="clickEvent()">Submit</button>
+<script type="text/javascript">
+	
+	function loadEvent()
+	{
+
+		console.log("onload event");
+	}
+
+	function mouseOver()
+	{
+		console.log("mouseOver event");
+	}
+
+	function mouseOut()
+	{
+		console.log("mouseOut event");
+	}
+
+	function keyDown()
+	{
+		console.log("keyDown event");
+	}
+
+	function keyUp()
+	{
+		console.log("keyUp event");
+	}
+
+	function clickEvent()
+	{
+		alert('Mouse is clicked');
+		console.log("clickEvent event"
+			);
+	}
+
+	function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>This example uses the addEventListener() </p>
+<button id="demo"> Mouse Event</button>
+
+<script>
+document.getElementById("demo").addEventListener("mouseover", mouseOver);
+
+document.getElementById("demo").addEventListener("mouseout", mouseOut);
+
+document.getElementById("demo").addEventListener("click", function(event)
+	{
+		console.log('mouse click ',event);
+	});
+
+
+
+
+function mouseOver() {
+	console.log('mouse over');
+	
+    document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+	console.log('mouse out');
+    document.getElementById("demo").style.color = "green";
+}
+</script>
+
+</body>
+</html>
+

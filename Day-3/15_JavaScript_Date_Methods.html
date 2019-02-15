@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript getTime()</h2>
+
+<p>The internal clock in JavaScript counts from midnight January 1, 1970.</p>
+<p>The getTime() function returns the number of milliseconds since then:</p>
+
+<p id="demo"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getTime();
+</script>
+
+
+<p>The getFullYear() method returns the full year of a date:</p>
+
+<p id="demo1"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo1").innerHTML = d.getFullYear();
+</script>
+
+
+<p>The getMonth() method returns the month of a date as a number (0-11):</p>
+
+<p id="demo2"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo2").innerHTML = d.getMonth();
+</script>
+
+
+<p>The getMonth() method returns the month as a number:</p>
+
+<p>You can use an array to display the name of the month:</p>
+
+<p id="demo3"></p>
+
+<script>
+var d = new Date();
+var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+document.getElementById("demo3").innerHTML = months[d.getMonth()];
+</script>
+
+
+<p>The getHours() method returns the hours of a date as a number (0-23):</p>
+
+<p id="demo4"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo4").innerHTML = d.getHours();
+</script>
+
+
+<p>The getMinutes() method returns the minutes of a date as a number (0-59):</p>
+
+<p id="demo5"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo5").innerHTML = d.getMinutes();
+</script>
+
+
+<p>The getSeconds() method returns the seconds of a date as a number (0-59):</p>
+
+<p id="demo6"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo6").innerHTML = d.getSeconds();
+</script>
+
+
+<p>The getDay() method returns the weekday as a number:</p>
+
+<p id="demo7"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo7").innerHTML = d.getDay();
+</script>
+</body>
+</html>
